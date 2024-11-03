@@ -1,0 +1,17 @@
+{
+  "create_character": "Create new character!",
+  "character_name": "Character Name",
+  "player_name": "Player Name",
+  "drop_image": "Drop the image of character",
+  "select_race": "Select your character's race",
+  "select_class": "Select your character's class",
+  "select_gender": "Select your character's gender",
+  "choose_alignment": "Choose your character's alignment",
+  "type_background": "Type your character's background",
+  "randomize_stats": "Randomize Stats",
+  "items": "Items",
+  "skills": "Skills",
+  "save": "Save",
+  "export": "Export",
+  "Bonus": "Boune"
+}

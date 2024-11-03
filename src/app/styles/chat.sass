@@ -1,0 +1,94 @@
+.chat-container
+  position: fixed
+  bottom: 25%
+  right: 3%
+  width: 500px
+  height: 600px
+  color: #fff
+  background-color: #101010
+  border: 3px solid #1a1a1a
+  border-radius: 20px
+  overflow: hidden
+  font-family: 'src'
+  transition: transform 0.3s ease
+  z-index: 1000 // чтобы быть поверх всех компонентов
+  pointer-events: auto // для взаимодействия с чатом
+
+  &.closed
+    transform: translateX(100%)
+
+  &.open
+    transform: translateX(0)
+
+  .chat-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+    background-color: #101010
+    border-bottom: 1px solid #1a1a1a
+
+  .chat-toggle
+    background: none
+    border: none
+    color: #fff
+    cursor: pointer
+    font-size: 16px
+
+  .chat-body
+    display: flex
+    flex-direction: column
+    height: calc(100% - 40px) // высота тела чата за вычетом заголовка
+
+  .chat-messages
+    flex: 1
+    padding: 10px
+    overflow-y: auto
+
+  .chat-message
+    padding: 5px
+    border-bottom: 1px solid #555
+
+  .chat-input
+    display: flex
+    padding: 13px
+    background-color: #222222
+    border-top: 3px solid #464646
+    margin-bottom: 1rem
+
+    input
+      flex: 1
+      padding: 5px
+      border: none
+      border-radius: 15px
+      margin-right: 10px
+      border-radius: 15px
+      border: 3px solid #333
+      background: #0d0d0d
+      color: #fff
+      box-sizing: border-box
+      transition: background-color 0.3s ease, border 0.3s ease
+      outline: none
+
+    input:hover
+      background-color: #1a1a1a
+      border: 3px solid #494949
+
+    input:focus
+      background-color: #080808
+      border: 3px solid #1f1f1f
+
+    button
+      background-color: #0d0d0d
+      border: 3px solid #333
+      color: #fff
+      border-radius: 20px
+      cursor: pointer
+      font-size: 14px
+      width: 15%
+      height: 100%
+      transform: translateY(-20px)
+
+    button:hover
+      background-color: #1a1a1a
+      border: 3px solid #494949

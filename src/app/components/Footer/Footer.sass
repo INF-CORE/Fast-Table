@@ -1,0 +1,75 @@
+$back: #040404
+
+html, body
+  height: 100%
+  margin: 0
+
+main
+  flex: 1
+  min-height: calc(100vh - 4rem)
+
+footer
+  background: $back
+  color: #fff
+  padding: 1rem
+  width: 100%
+  box-sizing: border-box
+  margin-bottom: 1rem
+  border-radius: 50px
+  height: 16em
+
+  @media (min-width: 768px)
+    width: 97%
+    margin: 0 1.5% 1rem
+
+  @media (min-width: 1024px)
+    width: 97%
+    margin: 0 1.5% 1rem
+
+body::after
+  content: ''
+  display: block
+
+.a
+  color: #fff
+  text-decoration: none
+  transition: color 0.3s ease
+
+.a:hover
+  color: #A0A0A0
+
+.footer-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 100%
+
+.lili
+  list-style: none
+  padding: 0
+  text-align: right
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  height: 100%
+
+  li
+    position: relative
+    padding-right: 1em
+    margin-bottom: 0.5em
+    display: flex
+    align-items: center
+    font-family: 'src'
+    font-size: 130%
+    height: 2em
+    margin-right: 3rem
+    margin-top: 1rem
+
+    &::before
+      content: ''
+      margin-right: 0.5em
+      color: #fff
+
+
+img
+  margin-left: 1rem

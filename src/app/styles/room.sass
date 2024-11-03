@@ -1,0 +1,182 @@
+body
+  background-color: #0c0c0c
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  color: #fff
+
+// room.sass
+
+$cell-size: 40px // размер клетки
+$grid-width: 20
+$grid-height: 10 // высота поля
+
+.grid
+  display: grid
+  grid-template-columns: repeat($grid-width, $cell-size)
+  grid-template-rows: repeat($grid-height, $cell-size)
+  grid-gap: 4px // отступы между клетками
+  position: relative // для позиционирования кнопок относительно поля
+
+.grid-cell
+  width: $cell-size
+  height: $cell-size
+  background-color: #232323
+  border-radius: 5px // закругление углов
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 20px // размер текста
+  color: #333 // цвет текста
+  position: relative // для позиционирования кнопок внутри клеток
+
+.grid-cell.player
+  color: white // цвет текста на фоне игрока
+
+.controls
+  position: absolute
+  pointer-events: none // игнорировать события мыши на родителе
+
+.control-group
+  position: absolute
+  pointer-events: auto // включить события мыши
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  top: 50%
+  left: 50%
+  transform: translate(10%, 10%) // центрировать блок управления
+
+.control-button
+  width: 30px
+  height: 30px
+  margin: 2px
+  background-color: transparent
+  color: white
+  border: none
+  border-radius: 5px
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 16px
+  transition: filter 0.3s ease
+
+.control-button:focus
+  outline: none
+
+.control-up
+  margin-bottom: 4px // отступ между кнопками
+
+.control-left,
+.control-right
+  margin: 2px // отступ между кнопками
+
+.control-down
+  margin-top: 4px // отступ между кнопками
+
+.control-button:hover
+  filter: brightness(0.7)
+
+// styles/room.sass
+
+.share-button
+  position: relative
+  background-color: #2B843B
+  color: white
+  padding: 10px 20px
+  cursor: pointer
+  transition: background-color 0.3s
+  border-radius: 20px
+  border: 3px #39A84D solid
+  width: 140px
+  height: 140px
+  font-family: 'src'
+  font-size: 120%
+  margin: 1rem
+  align-items: center
+
+  &.copied
+    background-color: #38DC55
+
+  .copied-text
+    position: absolute
+    top: -30px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #28a745
+    color: white
+    padding: 5px 10px
+    border-radius: 5px
+    font-size: 12px
+    white-space: nowrap
+    animation: fadeUp 1s ease-out
+
+.share-button:hover
+  background-color: #185122
+
+@keyframes fadeUp
+  0%
+    transform: translateY(20px), translateX(-50%)
+    opacity: 0
+  50%
+    transform: translateY(0), translateX(-50%)
+    opacity: 1
+  100%
+    transform: translateY(20px), translateX(-50%)
+    opacity: 0
+
+.panel-button
+  -webkit-box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2)
+  -moz-box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2)
+  background-color: #151515
+  border: 3px solid #282828
+  text-align: center
+  color: #fff
+  border-radius: 20px
+  font-family: 'src'
+  font-size: 90%
+  font-size: 105%
+  padding: 1rem
+  transition: background-color 0.3s ease, transform 0.3s ease, border 0.3s ease, color 0.3s ease, font-size 0.3s ease, box-shadow 0.3s ease
+  width: 140px
+  height: 140px
+  margin: 1rem
+  align-items: center
+
+.panel-button:hover
+  -webkit-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2)
+  -moz-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.1)
+  background-color: #101010
+  border: 3px solid #151515
+  transform: translateY(-10px)
+  cursor: pointer
+  color: #eeeeee
+  font-size: 110%
+
+.game-panel
+  background-color: #101010
+  border: 3px solid #1a1a1a
+  color: #fff
+  padding: 1rem
+  width: 80%
+  box-sizing: border-box
+  border-radius: 25px
+  transform: translateY(20%)
+  align-items: center
+  text-align: center
+  font-family: 'src'
+
+  @media (min-width: 768px)
+    width: 77%
+    margin: 0 1.5% 1rem
+
+  @media (min-width: 1024px)
+    width: 77%
+    margin: 0 1.5% 1rem
+

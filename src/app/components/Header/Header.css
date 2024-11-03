@@ -1,0 +1,159 @@
+.Header {
+    background-color: #101010;
+    border: 3px solid #1a1a1a;
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 97%;
+    height: 40px;
+    opacity: 0;
+    transform: scaleX(0);
+    animation: headerFadeIn 1s forwards;
+}
+
+/* Ключевые кадры для анимации хедера */
+@keyframes headerFadeIn {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Стиль для логотипа */
+.Header .logo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    opacity: 0;
+    animation: logoFadeIn 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Ключевые кадры для анимации логотипа */
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Стиль для навигации */
+.Header .nav {
+    display: flex;
+    gap: 1rem;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Анимация для пунктов меню */
+.Header .nav-item {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: 'src';
+    font-size: 130%;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: navItemFadeIn 0.5s ease forwards;
+}
+
+/* Ключевые кадры для анимации пунктов меню */
+@keyframes navItemFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Header .nav-item:nth-child(1) {
+    animation-delay: 1.25s;
+}
+
+.Header .nav-item:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.Header .nav-item:nth-child(3) {
+    animation-delay: 1.75s;
+}
+
+.Header .nav-item:nth-child(4) {
+    animation-delay: 2s;
+}
+
+/* Hover эффект для навигации */
+.Header .nav-item:hover {
+    color: #A0A0A0;
+    cursor: pointer;
+}
+
+/* Стиль для хедера с блюром и изменением обводки */
+.Header.blurred {
+    background-color: rgba(16, 16, 16, 0.8); /* Прозрачный фон */
+    backdrop-filter: blur(10px); /* Блюр */
+    border: 1px solid #5C5C5C; /* Более тонкая обводка */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 630px) {
+    .Header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Header .nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .Header .nav-item {
+        padding: 0.5rem;
+        font-size: 110%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Header .nav-item {
+        padding: 0.25rem 0.5rem;
+        font-size: 90%;
+    }
+
+    .Header .logo img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 320px) {
+    .Header .nav-item {
+        padding: 0.2rem 0.4rem;
+        font-size: 80%;
+    }
+
+    .Header .logo img {
+        width: 60%;
+    }
+}

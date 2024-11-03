@@ -1,0 +1,191 @@
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+body {
+	background-color: #0c0c0c;
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hello {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	animation: fadeInUp 1s ease-out;
+}
+
+.container {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text-block {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	width: 100%;
+	max-width: 1200px;
+	box-sizing: border-box;
+	animation: fadeIn 0.5s ease-out;
+}
+
+.svg2 {
+	width: 400px;
+	height: 90px;
+	animation: fadeIn 0.5s ease-out;
+}
+
+.hello-text {
+	text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.88);
+	font-size: 4em;
+	line-height: 1.2;
+}
+
+@media (max-width: 710px) {
+	.hello-text {
+		font-size: 3em;
+	}
+	.svg2 {
+		width: 300px;
+		height: 70px;
+	}
+}
+
+@media (max-width: 600px) {
+	.hello-text {
+		font-size: 2.5em;
+	}
+	.svg2 {
+		width: 200px;
+		height: 50px;
+	}
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center; /* Центрирование кнопок по горизонтали */
+	gap: 1rem; /* Расстояние между кнопками */
+	flex-wrap: wrap; /* Перенос кнопок на новую строку при необходимости */
+	margin-top: 1rem; /* Добавляем отступ сверху */
+}
+
+.btn-container img {
+	margin-right: auto;
+}
+
+.btn-container p {
+	margin: 0 auto;
+	margin-left: -2rem;
+}
+
+.big-btn,
+.small-btn {
+	-webkit-box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 45px 0px -100px rgba(0, 0, 0, 0.2);
+	background-color: #151515;
+	border: 3px solid #282828;
+	text-align: center;
+	color: #fff;
+	border-radius: 20px;
+	font-family: 'src';
+	font-size: 90%;
+	height: 100px;
+	font-size: 150%;
+	padding: 1rem;
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease,
+		border 0.3s ease,
+		color 0.3s ease,
+		font-size 0.3s ease,
+		box-shadow 0.3s ease;
+	box-sizing: border-box; /* Учесть бордеры в ширине */
+
+	/* Добавьте эти свойства */
+	display: flex;
+	align-items: center; /* Вертикальное центрирование */
+	justify-content: center; /* Горизонтальное центрирование (если нужно) */
+}
+
+.big-btn {
+	width: 100%; /* Ширина кнопки 100% от контейнера */
+	max-width: 800px; /* Максимальная ширина кнопки */
+	margin: 1rem auto; /* Центрируем и добавляем отступ сверху и снизу */
+	margin-top: 3rem;
+	animation: fadeInUp 0.5s ease-out;
+}
+
+.big-btn:hover {
+	-webkit-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	background-color: #101010;
+	border: 3px solid #151515;
+	transform: translateY(-10px);
+	cursor: pointer;
+	color: #eeeeee;
+	font-size: 200%;
+}
+
+.small-btn {
+	width: 150%; /* Ширина кнопки 100% от контейнера */
+	max-width: 390px; /* Максимальная ширина кнопки */
+	animation: fadeInUp 1s ease-out;
+}
+
+.small-btn:hover {
+	-webkit-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 27px 65px -3px rgba(0, 0, 0, 0.2);
+	background-color: #101010;
+	border: 3px solid #151515;
+	transform: translateY(-10px);
+	cursor: pointer;
+	color: #eeeeee;
+	font-size: 200%;
+}
+
+/* Медиазапросы для различных размеров экрана */
+@media (min-width: 768px) {
+	.big-btn {
+		width: 60%; /* Ширина кнопки 60% от контейнера на больших экранах */
+	}
+
+	.small-btn {
+		width: 45%; /* Ширина кнопки 45% от контейнера на больших экранах */
+	}
+}
+
+a {
+	text-decoration: none;
+}

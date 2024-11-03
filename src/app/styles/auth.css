@@ -1,0 +1,102 @@
+body {
+	background-color: #0c0c0c;
+	color: #fff;
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+.Auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.AuthWindow {
+	background: #101010;
+	padding: 3rem;
+	border-radius: 30px;
+	border: 3px solid #1a1a1a;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+}
+
+h2 {
+	margin-bottom: 2rem;
+}
+
+.place {
+	width: calc(100% - 2rem);
+	padding: 0.7rem;
+	margin: 0.5rem 0;
+	border-radius: 15px;
+	border: 3px solid #333;
+	background: #0d0d0d;
+	color: #fff;
+	box-sizing: border-box;
+	transition:
+		background-color 0.3s ease,
+		border 0.3s ease;
+	outline: none;
+}
+
+.place:hover {
+	background-color: #1a1a1a;
+	border: 3px solid #494949;
+}
+
+.place:focus {
+	background-color: #080808;
+	border: 3px solid #1f1f1f;
+}
+
+label {
+	display: block;
+	margin-top: 1rem;
+	position: relative;
+	cursor: pointer;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+	.AuthWindow {
+		padding: 2rem;
+	}
+
+	.place {
+		padding: 0.5rem;
+	}
+}
+
+.checkbox-custom {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #000000;
+	margin-bottom: -0.3rem;
+	margin-right: 1rem;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: background-color 0.3s ease;
+	outline: none;
+}
+
+.checkbox-custom:checked {
+	background-color: #fff;
+}
+
+.checkbox-custom:checked + label:before {
+	content: '';
+	left: 8px;
+	top: 8px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #000;
+}
